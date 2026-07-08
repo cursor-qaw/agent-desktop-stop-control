@@ -6,6 +6,9 @@ let nextId = 1;
 function App() {
   const [todos, setTodos] = useState([]);
   const [draft, setDraft] = useState('');
+  function handleTestClick() {
+    console.log('Never tell me the odds');
+  }
 
   function addTodo(e) {
     e.preventDefault();
@@ -29,6 +32,9 @@ function App() {
     <div className="app">
       <main className="todo-panel">
         <h1 className="todo-title">To-do</h1>
+        <button type="button" className="todo-add" onClick={handleTestClick}>
+          Test
+        </button>
 
         <form className="todo-form" onSubmit={addTodo}>
           <label htmlFor="new-todo" className="visually-hidden">
