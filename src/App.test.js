@@ -14,6 +14,7 @@ test('test button logs Never tell me the odds', async () => {
   await userEvent.click(screen.getByRole('button', { name: /^test$/i }));
 
   expect(logSpy).toHaveBeenCalledWith('Never tell me the odds');
+  expect(screen.getByRole('status')).toHaveTextContent(/logged to console/i);
   logSpy.mockRestore();
 });
 
