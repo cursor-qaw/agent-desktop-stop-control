@@ -18,10 +18,27 @@
 }
 
 .todo-title {
-  margin: 0 0 1.25rem;
+  margin: 0 0 0.75rem;
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+}
+
+.test-button {
+  display: inline-block;
+  margin: 0 0 1.25rem;
+  padding: 0.5rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1e3a5f;
+  background: #e8eef7;
+  border: 1px solid #c5d4ea;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.test-button:hover {
+  background: #d9e4f5;
 }
 
 .todo-form {
