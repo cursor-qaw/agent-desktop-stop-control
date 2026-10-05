@@ -20,8 +20,10 @@ test('test button logs Never tell me the odds', async () => {
   const logSpy = jest.spyOn(console, 'log').mockImplementation(() => {});
   render(<App />);
 
-  await userEvent.click(screen.getByRole('button', { name: /^test$/i }));
+  const testButton = screen.getByRole('button', { name: /^test$/i });
+  await userEvent.click(testButton);
 
   expect(logSpy).toHaveBeenCalledWith('Never tell me the odds');
+  expect(screen.getByRole('button', { name: /^logged!$/i })).toBeInTheDocument();
   logSpy.mockRestore();
 });

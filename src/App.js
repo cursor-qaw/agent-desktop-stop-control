@@ -6,6 +6,7 @@ let nextId = 1;
 function App() {
   const [todos, setTodos] = useState([]);
   const [draft, setDraft] = useState('');
+  const [testLabel, setTestLabel] = useState('Test');
 
   function addTodo(e) {
     e.preventDefault();
@@ -27,6 +28,8 @@ function App() {
 
   function handleTestClick() {
     console.log('Never tell me the odds');
+    setTestLabel('Logged!');
+    window.setTimeout(() => setTestLabel('Test'), 2000);
   }
 
   return (
@@ -39,7 +42,7 @@ function App() {
           className="test-button"
           onClick={handleTestClick}
         >
-          Test
+          {testLabel}
         </button>
 
         <form className="todo-form" onSubmit={addTodo}>
