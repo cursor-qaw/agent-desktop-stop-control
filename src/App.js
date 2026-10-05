@@ -6,6 +6,7 @@ let nextId = 1;
 function App() {
   const [todos, setTodos] = useState([]);
   const [draft, setDraft] = useState('');
+  const [testLabel, setTestLabel] = useState('Test');
 
   function addTodo(e) {
     e.preventDefault();
@@ -25,10 +26,24 @@ function App() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   }
 
+  function handleTestClick() {
+    console.log('Never tell me the odds');
+    setTestLabel('Logged!');
+    window.setTimeout(() => setTestLabel('Test'), 2000);
+  }
+
   return (
     <div className="app">
       <main className="todo-panel">
         <h1 className="todo-title">To-do</h1>
+
+        <button
+          type="button"
+          className="test-button"
+          onClick={handleTestClick}
+        >
+          {testLabel}
+        </button>
 
         <form className="todo-form" onSubmit={addTodo}>
           <label htmlFor="new-todo" className="visually-hidden">
