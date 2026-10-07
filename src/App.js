@@ -25,6 +25,10 @@ function App() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   }
 
+  function logOdds() {
+    console.log('Never tell me the odds');
+  }
+
   return (
     <div className="app">
       <main className="todo-panel">
@@ -47,6 +51,10 @@ function App() {
             Add
           </button>
         </form>
+
+        <button type="button" className="odds-button" onClick={logOdds}>
+          Test
+        </button>
 
         {todos.length === 0 ? (
           <p className="todo-empty">No tasks yet. Add one above.</p>

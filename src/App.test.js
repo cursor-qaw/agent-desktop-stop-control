@@ -7,6 +7,16 @@ test('renders to-do heading', () => {
   expect(screen.getByRole('heading', { name: /to-do/i })).toBeInTheDocument();
 });
 
+test('logs the odds message when Test is clicked', async () => {
+  const log = jest.spyOn(console, 'log').mockImplementation(() => {});
+
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: /^test$/i }));
+
+  expect(log).toHaveBeenCalledWith('Never tell me the odds');
+  log.mockRestore();
+});
+
 test('adds a task and shows it in the list', async () => {
   render(<App />);
 
