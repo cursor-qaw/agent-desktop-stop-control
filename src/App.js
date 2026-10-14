@@ -6,6 +6,7 @@ let nextId = 1;
 function App() {
   const [todos, setTodos] = useState([]);
   const [draft, setDraft] = useState('');
+  const [tested, setTested] = useState(false);
 
   function addTodo(e) {
     e.preventDefault();
@@ -27,6 +28,7 @@ function App() {
 
   function logOdds() {
     console.log('Never tell me the odds');
+    setTested(true);
   }
 
   return (
@@ -81,7 +83,11 @@ function App() {
           </ul>
         )}
 
-        <button type="button" className="test-button" onClick={logOdds}>
+        <button
+          type="button"
+          className={tested ? 'test-button tested' : 'test-button'}
+          onClick={logOdds}
+        >
           Test
         </button>
       </main>

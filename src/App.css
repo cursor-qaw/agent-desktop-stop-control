@@ -145,6 +145,15 @@
   outline: none;
 }
 
+.test-button.tested,
+.test-button.tested:hover,
+.test-button.tested:focus,
+.test-button.tested:active {
+  background: #15803d;
+  color: #fff;
+  border-color: #166534;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
