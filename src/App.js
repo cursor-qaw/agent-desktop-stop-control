@@ -76,6 +76,14 @@ function App() {
             ))}
           </ul>
         )}
+
+        <button
+          type="button"
+          className="todo-test"
+          onClick={() => console.log('Never tell me the odds')}
+        >
+          Test
+        </button>
       </main>
     </div>
   );
