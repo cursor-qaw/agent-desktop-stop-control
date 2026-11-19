@@ -25,6 +25,10 @@ function App() {
     setTodos((prev) => prev.filter((t) => t.id !== id));
   }
 
+  function logNeverTellMeTheOdds() {
+    console.log("Never tell me the odds");
+  }
+
   return (
     <div className="app">
       <main className="todo-panel">
@@ -76,6 +80,14 @@ function App() {
             ))}
           </ul>
         )}
+
+        <button
+          type="button"
+          className="todo-test"
+          onClick={logNeverTellMeTheOdds}
+        >
+          Test
+        </button>
       </main>
     </div>
   );
